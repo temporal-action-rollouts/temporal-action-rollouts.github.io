@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; style-src-attr 'unsafe-inline'; font-src 'self'; img-src 'self'; media-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Supplementary material: real-robot rollouts for first-order supervision in flow-based action chunking.">
+<meta name="color-scheme" content="light">
+<title>The Missing Temporal Dimension in Flow-Based Action Chunking</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=6">
+<script src="site.js?v=5" defer></script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<section class="hero shell" aria-labelledby="paper-title">
+  <div class="hero-copy">
+    <h1 id="paper-title">The Missing Temporal Dimension<br class="title-break"> in Flow-Based Action Chunking</h1>
+    <p class="publication-note">Supplementary material</p>
+  </div>
+</section>
+
+<section id="rollouts" class="shell section rollouts" aria-labelledby="rollout-title">
+  <div class="section-head"><div><h2 id="rollout-title">Real-robot videos</h2></div></div>
+  <nav class="section-nav" aria-label="Video sections">
+    <a href="#baseline-comparison">Comparison against baseline</a>
+    <a href="#translation-and-rotation">Translation and rotation</a>
+    <a href="#multi-modality">Multi-modality</a>
+  </nav>
+  <section id="baseline-comparison" class="video-subsection" aria-labelledby="comparison-title">
+    <div class="subsection-head"><div><h3 id="comparison-title">Comparison against baseline</h3></div><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> baseline vs. first-order supervision</p></div>
+  <div class="task-list"><article class="task" id="sausage" aria-labelledby="sausage-title">
+      <div class="task-head">
+        <div><h4 id="sausage-title">Put Sausage in Pot</h4></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play both</span></button>
+          <label class="rate"><span class="sr-only">Playback speed for Put Sausage in Pot</span><select aria-label="Playback speed for Put Sausage in Pot"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos"><figure class="clip base">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> baseline</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/sausage-base.jpg" aria-label="Put Sausage in Pot: π0.5 baseline rollout">
+            <source src="media/sausage-base.mp4" type="video/mp4">
+            <a href="media/sausage-base.mp4">Open π0.5 baseline video</a>
+          </video>
+        </figure><figure class="clip ours">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + first-order</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/sausage-first-order.jpg" aria-label="Put Sausage in Pot: π0.5 + first-order rollout">
+            <source src="media/sausage-first-order.mp4" type="video/mp4">
+            <a href="media/sausage-first-order.mp4">Open π0.5 + first-order video</a>
+          </video>
+        </figure></div>
+    </article>
+<article class="task" id="pen" aria-labelledby="pen-title">
+      <div class="task-head">
+        <div><h4 id="pen-title">Put Pen in Holder</h4></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play both</span></button>
+          <label class="rate"><span class="sr-only">Playback speed for Put Pen in Holder</span><select aria-label="Playback speed for Put Pen in Holder"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos"><figure class="clip base">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> baseline</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/pen-base.jpg" aria-label="Put Pen in Holder: π0.5 baseline rollout">
+            <source src="media/pen-base.mp4" type="video/mp4">
+            <a href="media/pen-base.mp4">Open π0.5 baseline video</a>
+          </video>
+        </figure><figure class="clip ours">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + first-order</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/pen-first-order.jpg" aria-label="Put Pen in Holder: π0.5 + first-order rollout">
+            <source src="media/pen-first-order.mp4" type="video/mp4">
+            <a href="media/pen-first-order.mp4">Open π0.5 + first-order video</a>
+          </video>
+        </figure></div>
+    </article>
+<article class="task" id="cups" aria-labelledby="cups-title">
+      <div class="task-head">
+        <div><h4 id="cups-title">Stack Cups</h4></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play both</span></button>
+          <label class="rate"><span class="sr-only">Playback speed for Stack Cups</span><select aria-label="Playback speed for Stack Cups"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos"><figure class="clip base">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> baseline</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/cups-base.jpg" aria-label="Stack Cups: π0.5 baseline rollout">
+            <source src="media/cups-base.mp4" type="video/mp4">
+            <a href="media/cups-base.mp4">Open π0.5 baseline video</a>
+          </video>
+        </figure><figure class="clip ours">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + first-order</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/cups-first-order.jpg" aria-label="Stack Cups: π0.5 + first-order rollout">
+            <source src="media/cups-first-order.mp4" type="video/mp4">
+            <a href="media/cups-first-order.mp4">Open π0.5 + first-order video</a>
+          </video>
+        </figure></div>
+    </article>
+<article class="task" id="cubes" aria-labelledby="cubes-title">
+      <div class="task-head">
+        <div><h4 id="cubes-title">Put Cubes in Cup</h4></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play both</span></button>
+          <label class="rate"><span class="sr-only">Playback speed for Put Cubes in Cup</span><select aria-label="Playback speed for Put Cubes in Cup"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos"><figure class="clip base">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> baseline</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/cubes-base.jpg" aria-label="Put Cubes in Cup: π0.5 baseline rollout">
+            <source src="media/cubes-base.mp4" type="video/mp4">
+            <a href="media/cubes-base.mp4">Open π0.5 baseline video</a>
+          </video>
+        </figure><figure class="clip ours">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + first-order</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/cubes-first-order.jpg" aria-label="Put Cubes in Cup: π0.5 + first-order rollout">
+            <source src="media/cubes-first-order.mp4" type="video/mp4">
+            <a href="media/cubes-first-order.mp4">Open π0.5 + first-order video</a>
+          </video>
+        </figure></div>
+    </article>
+<article class="task" id="tomatoes" aria-labelledby="tomatoes-title">
+      <div class="task-head">
+        <div><h4 id="tomatoes-title">Put Tomatoes in Bowl</h4></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play both</span></button>
+          <label class="rate"><span class="sr-only">Playback speed for Put Tomatoes in Bowl</span><select aria-label="Playback speed for Put Tomatoes in Bowl"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos"><figure class="clip base">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> baseline</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/tomatoes-base.jpg" aria-label="Put Tomatoes in Bowl: π0.5 baseline rollout">
+            <source src="media/tomatoes-base.mp4" type="video/mp4">
+            <a href="media/tomatoes-base.mp4">Open π0.5 baseline video</a>
+          </video>
+        </figure><figure class="clip ours">
+          <figcaption><span class="clip-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + Ours</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/tomatoes-ours.jpg" aria-label="Put Tomatoes in Bowl: π0.5 + Ours rollout">
+            <source src="media/rotation-tomatoes-pi05-front-v2.mp4" type="video/mp4">
+            <a href="media/rotation-tomatoes-pi05-front-v2.mp4">Open π0.5 + Ours video</a>
+          </video>
+        </figure></div>
+    </article></div>
+
+  </section>
+  <section id="translation-and-rotation" class="video-subsection motion-section" aria-labelledby="motion-title">
+    <div class="subsection-head"><div><h3 id="motion-title">Translation and rotation</h3></div></div>
+    <nav class="motion-nav" aria-label="Motion categories"><a href="#rotational">Rotational motion <span>2 rollouts</span></a><a href="#translational">Translational motion <span>2 rollouts</span></a></nav>
+    <section id="rotational" class="motion-group" aria-labelledby="rotational-title">
+      <div class="motion-head"><div><h4 id="rotational-title">Rotational motion</h4><p>End-effector reorientation during grasping, transport, and placement.</p></div></div>
+      <div class="task-list">    <article class="task multi-view" id="rotation-pen-xvla" data-multiview aria-labelledby="rotation-pen-xvla-title">
+      <div class="task-head">
+        <div><span class="policy-label">X-VLA + Ours</span><h5 id="rotation-pen-xvla-title">Put Pen in Holder</h5><p class="task-desc">Reorienting the pen from a tabletop grasp to insertion into the holder.</p></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play all views</span></button>
+          <button class="restart-views" type="button" aria-label="Restart all views of Put Pen in Holder">Restart</button>
+          <label class="rate"><select aria-label="Playback speed for Put Pen in Holder camera views"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos multi-videos"><figure class="clip ours view-front">
+          <figcaption><span class="clip-label">Front view</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/rotation-pen-xvla-front-v2.jpg" aria-label="Put Pen in Holder: Front view">
+            <source src="media/rotation-pen-xvla-front-v2.mp4" type="video/mp4"><a href="media/rotation-pen-xvla-front-v2.mp4">Open front view video</a>
+          </video>
+        </figure><figure class="clip ours view-left">
+          <figcaption><span class="clip-label">Left wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/rotation-pen-xvla-left-v2.jpg" aria-label="Put Pen in Holder: Left wrist camera">
+            <source src="media/rotation-pen-xvla-left-v2.mp4" type="video/mp4"><a href="media/rotation-pen-xvla-left-v2.mp4">Open left wrist camera video</a>
+          </video>
+        </figure><figure class="clip ours view-right">
+          <figcaption><span class="clip-label">Right wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/rotation-pen-xvla-right-v2.jpg" aria-label="Put Pen in Holder: Right wrist camera">
+            <source src="media/rotation-pen-xvla-right-v2.mp4" type="video/mp4"><a href="media/rotation-pen-xvla-right-v2.mp4">Open right wrist camera video</a>
+          </video>
+        </figure></div>
+    </article>
+    <article class="task multi-view" id="rotation-tomatoes-pi05" data-multiview aria-labelledby="rotation-tomatoes-pi05-title">
+      <div class="task-head">
+        <div><span class="policy-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + Ours</span><h5 id="rotation-tomatoes-pi05-title">Put Tomatoes in Bowl</h5><p class="task-desc">Wrist reorientation during repeated pick-and-place transfers into the bowl.</p></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play all views</span></button>
+          <button class="restart-views" type="button" aria-label="Restart all views of Put Tomatoes in Bowl">Restart</button>
+          <label class="rate"><select aria-label="Playback speed for Put Tomatoes in Bowl camera views"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos multi-videos"><figure class="clip ours view-front">
+          <figcaption><span class="clip-label">Front view</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/rotation-tomatoes-pi05-front-v2.jpg" aria-label="Put Tomatoes in Bowl: Front view">
+            <source src="media/rotation-tomatoes-pi05-front-v2.mp4" type="video/mp4"><a href="media/rotation-tomatoes-pi05-front-v2.mp4">Open front view video</a>
+          </video>
+        </figure><figure class="clip ours view-left">
+          <figcaption><span class="clip-label">Left wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/rotation-tomatoes-pi05-left-v2.jpg" aria-label="Put Tomatoes in Bowl: Left wrist camera">
+            <source src="media/rotation-tomatoes-pi05-left-v2.mp4" type="video/mp4"><a href="media/rotation-tomatoes-pi05-left-v2.mp4">Open left wrist camera video</a>
+          </video>
+        </figure><figure class="clip ours view-right">
+          <figcaption><span class="clip-label">Right wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/rotation-tomatoes-pi05-right-v2.jpg" aria-label="Put Tomatoes in Bowl: Right wrist camera">
+            <source src="media/rotation-tomatoes-pi05-right-v2.mp4" type="video/mp4"><a href="media/rotation-tomatoes-pi05-right-v2.mp4">Open right wrist camera video</a>
+          </video>
+        </figure></div>
+    </article></div>
+    </section>
+    <section id="translational" class="motion-group" aria-labelledby="translational-title">
+      <div class="motion-head"><div><h4 id="translational-title">Translational motion</h4><p>Object transport between separated positions in the workspace.</p></div></div>
+      <div class="task-list">    <article class="task multi-view" id="translation-cups-pi05" data-multiview aria-labelledby="translation-cups-pi05-title">
+      <div class="task-head">
+        <div><span class="policy-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + Ours</span><h5 id="translation-cups-pi05-title">Stack Cups</h5><p class="task-desc">Transporting cups from opposite sides of the workspace to a shared stacking position.</p></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play all views</span></button>
+          <button class="restart-views" type="button" aria-label="Restart all views of Stack Cups">Restart</button>
+          <label class="rate"><select aria-label="Playback speed for Stack Cups camera views"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos multi-videos"><figure class="clip ours view-front">
+          <figcaption><span class="clip-label">Front view</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/translation-cups-pi05-front-v2.jpg" aria-label="Stack Cups: Front view">
+            <source src="media/translation-cups-pi05-front-v2.mp4" type="video/mp4"><a href="media/translation-cups-pi05-front-v2.mp4">Open front view video</a>
+          </video>
+        </figure><figure class="clip ours view-left">
+          <figcaption><span class="clip-label">Left wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/translation-cups-pi05-left-v2.jpg" aria-label="Stack Cups: Left wrist camera">
+            <source src="media/translation-cups-pi05-left-v2.mp4" type="video/mp4"><a href="media/translation-cups-pi05-left-v2.mp4">Open left wrist camera video</a>
+          </video>
+        </figure><figure class="clip ours view-right">
+          <figcaption><span class="clip-label">Right wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/translation-cups-pi05-right-v2.jpg" aria-label="Stack Cups: Right wrist camera">
+            <source src="media/translation-cups-pi05-right-v2.mp4" type="video/mp4"><a href="media/translation-cups-pi05-right-v2.mp4">Open right wrist camera video</a>
+          </video>
+        </figure></div>
+    </article>
+    <article class="task multi-view" id="translation-cubes-pi05" data-multiview aria-labelledby="translation-cubes-pi05-title">
+      <div class="task-head">
+        <div><span class="policy-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> + Ours</span><h5 id="translation-cubes-pi05-title">Put Cubes in Cup</h5><p class="task-desc">Relocating the cup, then transferring three cubes from the right side of the workspace.</p></div>
+        <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.7a.7.7 0 0 1 1.1-.6l8.1 5.3a.7.7 0 0 1 0 1.2l-8.1 5.3a.7.7 0 0 1-1.1-.6Z"/></svg><span>Play all views</span></button>
+          <button class="restart-views" type="button" aria-label="Restart all views of Put Cubes in Cup">Restart</button>
+          <label class="rate"><select aria-label="Playback speed for Put Cubes in Cup camera views"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+      </div>
+      <div class="videos multi-videos"><figure class="clip ours view-front">
+          <figcaption><span class="clip-label">Front view</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/cubes-first-order.jpg" aria-label="Put Cubes in Cup: Front view">
+            <source src="media/cubes-first-order.mp4" type="video/mp4"><a href="media/cubes-first-order.mp4">Open front view video</a>
+          </video>
+        </figure><figure class="clip ours view-left">
+          <figcaption><span class="clip-label">Left wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/translation-cubes-pi05-left-v2.jpg" aria-label="Put Cubes in Cup: Left wrist camera">
+            <source src="media/translation-cubes-pi05-left-v2.mp4" type="video/mp4"><a href="media/translation-cubes-pi05-left-v2.mp4">Open left wrist camera video</a>
+          </video>
+        </figure><figure class="clip ours view-right">
+          <figcaption><span class="clip-label">Right wrist camera</span></figcaption>
+          <video controls playsinline preload="none" width="960" height="544" poster="media/translation-cubes-pi05-right-v2.jpg" aria-label="Put Cubes in Cup: Right wrist camera">
+            <source src="media/translation-cubes-pi05-right-v2.mp4" type="video/mp4"><a href="media/translation-cubes-pi05-right-v2.mp4">Open right wrist camera video</a>
+          </video>
+        </figure></div>
+    </article></div>
+    </section>
+  </section>
+  <section id="multi-modality" class="video-subsection grasp-section" aria-labelledby="multimodality-title">
+    <div class="subsection-head"><div><h3 id="multimodality-title">Multi-modality</h3></div></div>
+    <div class="task-list">
+      <article class="grasp-example" id="multimodality-cups" aria-labelledby="multimodality-cups-title">
+        <div class="task-head"><div><span class="policy-label">X-VLA +Ours</span><h4 id="multimodality-cups-title">Cup grasping</h4></div></div>
+        <figure class="clip ours grasp-clip">
+          <figcaption><span class="clip-label">Wrist camera (top) · Front view (bottom)</span><span class="duration">12 s · 1×</span></figcaption>
+          <video controls playsinline preload="none" width="1280" height="928" poster="media/multimodality-cups-xvla-ours-v3.jpg" aria-label="Cup grasping: X-VLA +Ours, two rim-grasp strategies with wrist and front views">
+            <source src="media/multimodality-cups-xvla-ours-v3.mp4" type="video/mp4">
+            <a href="media/multimodality-cups-xvla-ours-v3.mp4">Open X-VLA +Ours cup grasping comparison</a>
+          </video>
+        </figure>
+      </article>
+      <article class="grasp-example" id="multimodality-bowls" aria-labelledby="multimodality-bowls-title">
+        <div class="task-head"><div><span class="policy-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> +Ours</span><h4 id="multimodality-bowls-title">Bowl grasping</h4></div></div>
+        <figure class="clip ours grasp-clip">
+          <figcaption><span class="clip-label">Wrist camera (top) · Front view (bottom)</span><span class="duration">11 s · 1×</span></figcaption>
+          <video controls playsinline preload="none" width="1280" height="928" poster="media/multimodality-bowls-pi05-ours-v3.jpg" aria-label="Bowl grasping: π0.5 +Ours, two rim-grasp strategies with wrist and front views">
+            <source src="media/multimodality-bowls-pi05-ours-v3.mp4" type="video/mp4">
+            <a href="media/multimodality-bowls-pi05-ours-v3.mp4">Open π0.5 +Ours bowl grasping comparison</a>
+          </video>
+        </figure>
+      </article>
+    </div>
+  </section>
+</section>
+</main>
+<footer class="shell footer"><div><span>Supplementary material</span></div><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
