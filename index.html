@@ -270,25 +270,61 @@
   <section id="multi-modality" class="video-subsection grasp-section" aria-labelledby="multimodality-title">
     <div class="subsection-head"><div><h3 id="multimodality-title">Multi-modality</h3></div></div>
     <div class="task-list">
-      <article class="grasp-example" id="multimodality-cups" aria-labelledby="multimodality-cups-title">
-        <div class="task-head"><div><span class="policy-label">X-VLA +Ours</span><h4 id="multimodality-cups-title">Cup grasping</h4></div></div>
-        <figure class="clip ours grasp-clip">
-          <figcaption><span class="clip-label">Wrist camera (top) · Front view (bottom)</span><span class="duration">12 s · 1×</span></figcaption>
-          <video controls playsinline preload="none" width="1280" height="928" poster="media/multimodality-cups-xvla-ours-v3.jpg" aria-label="Cup grasping: X-VLA +Ours, two rim-grasp strategies with wrist and front views">
-            <source src="media/multimodality-cups-xvla-ours-v3.mp4" type="video/mp4">
-            <a href="media/multimodality-cups-xvla-ours-v3.mp4">Open X-VLA +Ours cup grasping comparison</a>
+      <article class="task multi-view grasp-example" id="multimodality-cups" data-multiview aria-labelledby="multimodality-cups-title">
+        <div class="task-head">
+          <div><span class="policy-label">X-VLA +Ours</span><h4 id="multimodality-cups-title">Cup grasping</h4><p class="task-desc">Under similar initial configurations, X-VLA +Ours uses the same left gripper to grasp the cup at different points along its rim.</p></div>
+          <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><span>Play all views</span></button>
+          <button class="restart-views" type="button" aria-label="Restart all views of Cup grasping">Restart</button>
+          <label class="rate"><select aria-label="Playback speed for Cup grasping"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+        </div>
+        <div class="grasp-rows">
+          <figure class="clip grasp-row grasp-wrist">
+          <figcaption class="grasp-trial-labels"><span>Trial 1: Left (wrist view)</span><span>Trial 2: Left (wrist view)</span></figcaption>
+          <video controls playsinline preload="none" width="1280" height="480" poster="media/multimodality-cups-xvla-ours-wrist-v4.jpg" aria-label="Cup grasping: trial 1 (left) and trial 2 (right), left wrist views">
+            <source src="media/multimodality-cups-xvla-ours-wrist-v4.mp4" type="video/mp4">
+            <a href="media/multimodality-cups-xvla-ours-wrist-v4.mp4">Open cup grasping left wrist views</a>
           </video>
         </figure>
+          <figure class="clip grasp-row grasp-front">
+          <figcaption class="grasp-view-label">Front view</figcaption>
+          <video controls playsinline preload="none" width="1280" height="362" poster="media/multimodality-cups-xvla-ours-front-v4.jpg" aria-label="Cup grasping: trial 1 (left) and trial 2 (right), front views">
+            <source src="media/multimodality-cups-xvla-ours-front-v4.mp4" type="video/mp4">
+            <a href="media/multimodality-cups-xvla-ours-front-v4.mp4">Open cup grasping front views</a>
+          </video>
+        </figure>
+        </div>
+        <p class="duration grasp-duration">12 s · 1×</p>
       </article>
-      <article class="grasp-example" id="multimodality-bowls" aria-labelledby="multimodality-bowls-title">
-        <div class="task-head"><div><span class="policy-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> +Ours</span><h4 id="multimodality-bowls-title">Bowl grasping</h4></div></div>
-        <figure class="clip ours grasp-clip">
-          <figcaption><span class="clip-label">Wrist camera (top) · Front view (bottom)</span><span class="duration">11 s · 1×</span></figcaption>
-          <video controls playsinline preload="none" width="1280" height="928" poster="media/multimodality-bowls-pi05-ours-v3.jpg" aria-label="Bowl grasping: π0.5 +Ours, two rim-grasp strategies with wrist and front views">
-            <source src="media/multimodality-bowls-pi05-ours-v3.mp4" type="video/mp4">
-            <a href="media/multimodality-bowls-pi05-ours-v3.mp4">Open π0.5 +Ours bowl grasping comparison</a>
+      <article class="task multi-view grasp-example" id="multimodality-bowls" data-multiview aria-labelledby="multimodality-bowls-title">
+        <div class="task-head">
+          <div><span class="policy-label"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>0.5</mn></msub></mrow><annotation encoding="application/x-tex">\pi_{0.5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> +Ours</span><h4 id="multimodality-bowls-title">Bowl grasping</h4><p class="task-desc">π0.5 +Ours lifts and moves the bowl using two different rim-grasp configurations.</p></div>
+          <div class="pair-actions" hidden>
+          <button class="play-pair" type="button"><span>Play all views</span></button>
+          <button class="restart-views" type="button" aria-label="Restart all views of Bowl grasping">Restart</button>
+          <label class="rate"><select aria-label="Playback speed for Bowl grasping"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <span class="sr-only" role="status"></span>
+        </div>
+        </div>
+        <div class="grasp-rows">
+          <figure class="clip grasp-row grasp-wrist">
+          <figcaption class="grasp-trial-labels"><span>Trial 1: Left (wrist view)</span><span>Trial 2: Left (wrist view)</span></figcaption>
+          <video controls playsinline preload="none" width="1280" height="480" poster="media/multimodality-bowls-pi05-ours-wrist-v4.jpg" aria-label="Bowl grasping: trial 1 (left) and trial 2 (right), left wrist views">
+            <source src="media/multimodality-bowls-pi05-ours-wrist-v4.mp4" type="video/mp4">
+            <a href="media/multimodality-bowls-pi05-ours-wrist-v4.mp4">Open bowl grasping left wrist views</a>
           </video>
         </figure>
+          <figure class="clip grasp-row grasp-front">
+          <figcaption class="grasp-view-label">Front view</figcaption>
+          <video controls playsinline preload="none" width="1280" height="362" poster="media/multimodality-bowls-pi05-ours-front-v4.jpg" aria-label="Bowl grasping: trial 1 (left) and trial 2 (right), front views">
+            <source src="media/multimodality-bowls-pi05-ours-front-v4.mp4" type="video/mp4">
+            <a href="media/multimodality-bowls-pi05-ours-front-v4.mp4">Open bowl grasping front views</a>
+          </video>
+        </figure>
+        </div>
+        <p class="duration grasp-duration">11 s · 1×</p>
       </article>
     </div>
   </section>

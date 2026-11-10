@@ -59,10 +59,16 @@ video { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio
 .multi-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .multi-videos .clip-label { font-size: 14px; }
 .grasp-example { max-width: 960px; width: 100%; margin-inline: auto; }
-.grasp-example .task-head { justify-content: center; text-align: center; margin-bottom: 16px; }
-.grasp-clip { display: flex; flex-direction: column; }
-.grasp-clip video { order: -1; aspect-ratio: 1280/928; }
-.grasp-clip figcaption { margin: 10px 0 0; font-size: 14px; flex-wrap: wrap; }
+.grasp-example.multi-view .task-head { flex-direction: column; align-items: center; text-align: center; margin-bottom: 20px; }
+.grasp-example .task-desc { margin-inline: auto; }
+.grasp-example .pair-actions { justify-content: center; }
+.grasp-rows { display: grid; gap: 16px; }
+.grasp-row .grasp-trial-labels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+.grasp-row figcaption { margin: 0 0 8px; font-size: clamp(13px, 1.8vw, 18px); font-weight: 500; line-height: 1.4; }
+.grasp-trial-labels span { padding-inline: 6px; }
+.grasp-wrist video { aspect-ratio: 1280/480; }
+.grasp-front video { aspect-ratio: 1280/362; }
+.grasp-duration { text-align: center; margin: 10px 0 0; }
 .duration { font-size: 13px; color: var(--muted); white-space: nowrap; }
 .katex { font-size: 1.1em; white-space: nowrap; }
 sub { line-height: 0; }
@@ -93,7 +99,6 @@ sub { line-height: 0; }
   .motion-nav { gap: 12px 20px; }
   .motion-nav span { display: block; margin: 0; text-align: center; }
   .motion-head h4 { font-size: 21px; }
-  .grasp-clip .clip-label { font-size: 13px; }
   .rollouts { padding-bottom: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
